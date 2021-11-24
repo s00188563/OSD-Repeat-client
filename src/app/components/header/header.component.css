@@ -1,0 +1,32 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 10rem;
+    background-color: var(--black);
+}
+header .logo {
+    padding-left: 4rem;
+}
+header .seperator {
+    flex: 1;
+}
+header .logo h1 {
+    font-family: "Praise", cursive;
+    color: var(--red);
+    font-weight: 100;
+    letter-spacing: 3px;
+}
+
+header ul li {
+    font-family: "Kanit", sans-serif;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: white;
+    opacity: 0.8;
+    padding-right: 4rem;
+}
+header ul li:hover {
+    opacity: 1;
+}
