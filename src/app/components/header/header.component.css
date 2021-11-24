@@ -8,12 +8,9 @@ header {
 header .logo {
     padding-left: 4rem;
 }
-header .seperator {
-    flex: 1;
-}
 header .logo h1 {
     font-family: "Praise", cursive;
-    color: var(--red);
+    color: white;
     font-weight: 100;
     letter-spacing: 3px;
 }
@@ -26,6 +23,7 @@ header ul li {
     color: white;
     opacity: 0.8;
     padding-right: 4rem;
+    cursor: pointer;
 }
 header ul li:hover {
     opacity: 1;
