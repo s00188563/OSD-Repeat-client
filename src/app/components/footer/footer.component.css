@@ -26,3 +26,6 @@ footer .footer-text {
     font-family: "Kanit", sans-serif;
     color: white;
 }
+a {
+    text-decoration: none;
+}
