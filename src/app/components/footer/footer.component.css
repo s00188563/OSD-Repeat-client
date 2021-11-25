@@ -1,0 +1,28 @@
+footer {
+    background-color: var(--red);
+    min-height: 10rem;
+    text-align: center;
+}
+footer .footer-text {
+    font-family: "Kanit", sans-serif;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+.github-wrapper {
+    display: flex;
+}
+.github {
+    opacity: 0.8;
+    padding: 2rem;
+}
+.github:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+.subtitle {
+    font-family: "Kanit", sans-serif;
+    color: white;
+}
