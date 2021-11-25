@@ -3,16 +3,17 @@ header {
     align-items: center;
     justify-content: space-around;
     min-height: 10rem;
-    background-color: var(--black);
+    background-color: var(--red);
 }
 header .logo {
     padding-left: 4rem;
 }
 header .logo h1 {
-    font-family: "Praise", cursive;
+    font-family: "Kanit", sans-serif;
     color: white;
-    font-weight: 100;
+    font-weight: 600;
     letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 header ul li {

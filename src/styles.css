@@ -40,3 +40,11 @@ li {
 .seperator {
     flex: 1;
 }
+.title {
+    font-family: "Kanit", sans-serif;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    padding: 2.5rem 0;
+    font-weight: 600;
+}
