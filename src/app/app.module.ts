@@ -15,6 +15,7 @@ import { VehiclesComponent } from './pages/vehicles.component';
 import { HttpClientModule } from '@angular/common/http';
 import { VehicleListComponent } from './components/vehicle-list/vehicle-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     VehiclesComponent,
     VehicleListComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

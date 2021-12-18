@@ -4,7 +4,9 @@
 :root {
     --red: #d72323;
     --grey: #3a4750;
-    --black: #303841;
+    --black: #252728;
+    --darkblack: #121212;
+    --darkgrey: #303841;
     --white: #eeeeee66;
     --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
     --border: 0.1rem solid rgba(0, 0, 0, 0.1);
@@ -24,25 +26,37 @@ html {
     overflow-x: hidden;
     scroll-padding-top: 7rem;
     scroll-behavior: smooth;
+    background-color: var(--black);
 }
 h1 {
     font-size: 4rem;
+    font-family: "Kanit", sans-serif;
+    color: white;
 }
 h2 {
     font-size: 3rem;
+    font-family: "Kanit", sans-serif;
+    color: white;
 }
 h3 {
     font-size: 2rem;
+    font-family: "Kanit", sans-serif;
+    color: white;
+}
+h4 {
+    font-size: 1rem;
+    font-family: "Kanit", sans-serif;
+    color: white;
 }
 li {
     font-size: 2rem;
+    font-family: "Kanit", sans-serif;
+    color: white;
 }
 .seperator {
     flex: 1;
 }
 .title {
-    font-family: "Kanit", sans-serif;
-    color: white;
     text-transform: uppercase;
     letter-spacing: 1rem;
     padding: 2.5rem 0;

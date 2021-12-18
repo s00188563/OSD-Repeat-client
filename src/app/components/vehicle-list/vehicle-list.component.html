@@ -1,4 +1,19 @@
 <section class="vehicles">
-    <app-vehicle *ngFor="let v of vehicleList"></app-vehicle>
-    <div>{{ vehicleList }}</div>
+    <h1 class="title">Vehicles</h1>
+    <div class="vehicles-container">
+        <div *ngFor="let v of vehicleList" class="vehicle">
+            <div class="vehicle-details">
+                <h3>{{ v.title }}</h3>
+                <img src="{{ v.image.url }}" alt="{{ v.image.public_id }}" />
+                <h3>€{{ v.price }}</h3>
+                <div class="btn-row">
+                    <button class="btn-view"><a>View</a></button>
+                    <button class="btn-buy"><a>Buy</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="load-more">
+        <button>Load more</button>
+    </div>
 </section>
