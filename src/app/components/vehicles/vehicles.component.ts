@@ -4,11 +4,11 @@ import { Vehicle } from 'src/app/interfaces/vehicle';
 import { VehiclesService } from 'src/app/services/vehicles.service';
 
 @Component({
-  selector: 'app-vehicle-list',
-  templateUrl: './vehicle-list.component.html',
-  styleUrls: ['./vehicle-list.component.css'],
+  selector: 'app-vehicles',
+  templateUrl: './vehicles.component.html',
+  styleUrls: ['./vehicles.component.css'],
 })
-export class VehicleListComponent implements OnInit {
+export class VehiclesComponent implements OnInit {
   constructor(private vehicleService: VehiclesService) {}
   vehicleList: Vehicle[] = [];
   error: string = '';

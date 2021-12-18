@@ -9,6 +9,9 @@
         url(src/assets/images/model.jpg) no-repeat center center;
     background-size: cover;
     position: relative;
+    border-top: 2px solid #282828;
+    border-bottom: 2px solid #2c2e2e;
+    box-shadow: 0px 0px 8px #000;
 }
 .top,
 .btn {
@@ -43,4 +46,23 @@
 .btn:active {
     outline: none;
     transform: translateY(-5px);
+}
+.partners {
+    text-align: center;
+    background-color: var(--black);
+    border-top: 2px solid #282828;
+    border-bottom: 2px solid #2c2e2e;
+    box-shadow: 0px 0px 8px #000;
+}
+.partner-wrapper {
+    display: flex;
+    justify-content: space-around;
+    height: fit-content;
+}
+.partners .partner-wrapper .logo {
+    width: 30%;
+}
+.partners .partner-wrapper .logo img {
+    width: 100%;
+    height: 90%;
 }
