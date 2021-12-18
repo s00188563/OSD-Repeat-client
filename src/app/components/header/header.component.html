@@ -7,6 +7,7 @@
     <div class="seperator"></div>
     <ul class="navbar">
         <li routerLink="/vehicles">vehicles</li>
-        <li routerLink="/login">Login</li>
+        <li *ngIf="!user.isLoggedIn" routerLink="/login">Login</li>
+        <li *ngIf="user.isLoggedIn" (click)="user.logout()">Logout</li>
     </ul>
 </header>

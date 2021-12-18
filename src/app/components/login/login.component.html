@@ -1,15 +1,32 @@
 <app-header></app-header>
 <section class="login">
     <div class="center">
+        <div
+            *ngIf="message"
+            class="alert alert-warning alert-dismissible show"
+            role="alert"
+        >
+            <strong>Error</strong> {{ message }}
+            <button
+                type="button"
+                class="btn-close"
+                (click)="dismissAlert()"
+                aria-label="Close"
+            ></button>
+        </div>
         <div class="login-page">
-            <form onSubmit="{loginSubmit}">
+            <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
                 <h2>Login</h2>
-                <input type="email" name="email" required placeholder="Email" />
+                <input
+                    type="email"
+                    formControlName="email"
+                    placeholder="Email"
+                    autocapitalize="off"
+                />
 
                 <input
                     type="password"
-                    name="password"
-                    required
+                    formControlName="password"
                     placeholder="Password"
                 />
 
