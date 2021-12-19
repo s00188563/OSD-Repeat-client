@@ -7,6 +7,7 @@ header {
 }
 header .logo {
     padding-left: 4rem;
+    cursor: pointer;
 }
 header .logo h1 {
     font-family: "Kanit", sans-serif;

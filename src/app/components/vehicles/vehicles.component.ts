@@ -58,6 +58,9 @@ export class VehiclesComponent implements OnInit {
     });
   }
   addToCart(vehicle: Vehicle) {
+    if (!this.userService.isLoggedIn) {
+      this.router.navigate(['/login']);
+    }
     this.currentVehicle = vehicle;
     this.userService.addToCart(this.currentVehicle);
   }
