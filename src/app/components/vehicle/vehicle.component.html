@@ -1,8 +1,25 @@
-<div className="vehicle-card">
-    <img src="{{ vehicle.image.url }}" alt="{{ vehicle.image.url }}" />
-    <div className="vehicle-box">
-        <h2>{{ vehicle.title }}</h2>
-        <span>&euro;{{ vehicle.price }}</span>
-        <p>{{ vehicle.description }}</p>
+<app-header></app-header>
+<section class="detail">
+    <div class="detail-container center">
+        <diV class="vehicle-card">
+            <div class="detail-img center">
+                <img src="{{ vehicle!.image.url! }}" alt="" />
+            </div>
+            <div class="box-detail">
+                <div class="row">
+                    <h2>{{ vehicle!.title }}</h2>
+                </div>
+                <div class="desc">
+                    <p>{{ vehicle!.description }}</p>
+                </div>
+                <div class="price">
+                    <h3>€{{ vehicle!.price }}</h3>
+                </div>
+                <div class="btn-row">
+                    <button class="btn-buy"><a>Buy</a></button>
+                </div>
+            </div>
+        </diV>
     </div>
-</div>
+</section>
+<app-footer></app-footer>

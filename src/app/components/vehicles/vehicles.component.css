@@ -66,12 +66,42 @@
 }
 .load-more button {
     padding: 10px 25px;
-    margin-bottom: 5rem;
+    margin: 5rem 0;
     text-transform: capitalize;
     color: white;
     font-weight: 600;
     background: var(--darkgrey);
     border: 2px solid #282828;
-    border: 2px solid #282828;
     box-shadow: 0px 0px 4px #000;
+}
+.filter_menu {
+    width: 100%;
+    min-height: 40px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.filter_menu span {
+    color: white;
+}
+.filter_menu select,
+input {
+    outline: none;
+    height: 40px;
+    border: 2px solid #282828;
+    background-color: var(--darkblack);
+    box-shadow: 0px 0px 4px #000;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+}
+.filter_menu input::placeholder {
+    color: white;
+    text-align: center;
+}
+.filter_menu input {
+    width: 80%;
+    color: white;
 }

@@ -1,5 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core'
-import { Vehicle } from 'src/app/interfaces/vehicle'
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Vehicle } from 'src/app/interfaces/vehicle';
+import { VehiclesService } from 'src/app/services/vehicles.service';
 
 @Component({
   selector: 'app-vehicle',
@@ -7,7 +10,14 @@ import { Vehicle } from 'src/app/interfaces/vehicle'
   styleUrls: ['./vehicle.component.css'],
 })
 export class VehicleComponent implements OnInit {
-  constructor() {}
-  @Input() vehicle!: Vehicle
-  ngOnInit(): void {}
+  relatedVehicles: Vehicle[] = [];
+  vehicleList: Vehicle[] = [];
+  vehicle: Vehicle | null = null;
+  error: string = '';
+  constructor(private vehicleService: VehiclesService) {}
+  ngOnInit(): void {
+    this.vehicleService
+      .getCurrentVehicle()
+      .subscribe((vehicle) => (this.vehicle = vehicle));
+  }
 }
