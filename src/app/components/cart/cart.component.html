@@ -1,0 +1,27 @@
+<app-header></app-header>
+<section class="detail">
+    <div class="detail-container center">
+        <div *ngFor="let cart of cart" class="vehicle-card">
+            <div class="detail-img center">
+                <img src="{{ cart.image.url }}" />
+            </div>
+            <div class="box-detail">
+                <div class="row">
+                    <h2>{{ cart.title }}</h2>
+                </div>
+                <div class="desc">
+                    <p>{{ cart.description }}</p>
+                </div>
+                <div class="price">
+                    <h3>€{{ cart.price }}</h3>
+                </div>
+                <div class="btn-row">
+                    <button class="btn-buy" (click)="remove(cart)">
+                        <a>Remove</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

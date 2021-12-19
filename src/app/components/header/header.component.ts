@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,6 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class HeaderComponent implements OnInit {
   constructor(public user: UserService) {}
-
+  faShoppingCart = faShoppingCart;
   ngOnInit(): void {}
 }

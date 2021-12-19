@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Vehicle } from 'src/app/interfaces/vehicle';
+import { UserService } from 'src/app/services/user.service';
 import { VehiclesService } from 'src/app/services/vehicles.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class VehiclesComponent implements OnInit {
   @Input() term: any = { category: '', search: '', sort: '' };
   constructor(
     private vehicleService: VehiclesService,
+    private userService: UserService,
     private router: Router
   ) {}
   vehicleList: Vehicle[] = [];
@@ -54,5 +56,9 @@ export class VehiclesComponent implements OnInit {
       complete: () => console.log(this.vehicleList),
       error: (error) => (this.error = error),
     });
+  }
+  addToCart(vehicle: Vehicle) {
+    this.currentVehicle = vehicle;
+    this.userService.addToCart(this.currentVehicle);
   }
 }

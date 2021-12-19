@@ -8,6 +8,17 @@
     <ul class="navbar">
         <li routerLink="/vehicles">vehicles</li>
         <li *ngIf="!user.isLoggedIn" routerLink="/login">Login</li>
-        <li *ngIf="user.isLoggedIn" (click)="user.logout()">Logout</li>
+        <div *ngIf="user.isLoggedIn" class="cart-icon" routerLink="/cart">
+            <span>5</span>
+            <fa-icon
+                [icon]="faShoppingCart"
+                size="2x"
+                [style]="{ color: 'white' }"
+            >
+            </fa-icon>
+        </div>
+        <li *ngIf="user.isLoggedIn" (click)="user.logout()" routerLink="/">
+            Logout
+        </li>
     </ul>
 </header>

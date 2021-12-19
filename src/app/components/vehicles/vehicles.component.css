@@ -35,6 +35,7 @@
 .vehicle-details h3 {
     font-family: "Kanit", sans-serif;
     color: white;
+    text-transform: uppercase;
 }
 .btn-row {
     width: 100%;
