@@ -106,7 +106,7 @@ export class UserService {
     console.log('hi there');
     this.updateCartURL = `http://localhost:3000/api/${this.userSubject.value?._id}/updatecart`;
     this.http
-      .patch<any>(this.cartURL, { cart: cart })
+      .put<any>(this.updateCartURL, { cart: cart })
       .subscribe((response) => console.log(response));
   }
 
