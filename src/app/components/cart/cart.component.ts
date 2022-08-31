@@ -35,7 +35,10 @@ export class CartComponent implements OnInit {
     this.userService.updateCart(cart);
   }
   openPayDialog() {
-    const dialogRef = this.dialog.open(PayDialogComponent);
+    const dialogRef = this.dialog.open(PayDialogComponent, {
+      backdropClass: 'backdropBackground',
+      disableClose: true,
+    });
     dialogRef.afterClosed().subscribe(() => {
       console.log('dialog has been closed');
     });

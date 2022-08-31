@@ -1,4 +1,92 @@
-div {
-    height: 400px;
-    width: 400px;
+::ng-deep .mat-dialog-container {
+    background: var(--black) !important;
+    border: 2px solid #282828;
+    box-shadow: 0px 0px 8px #000;
+}
+
+.payment-title {
+    width: 100%;
+    text-align: center;
+}
+
+.form-container form .field-container:first-of-type {
+    grid-area: name;
+}
+
+.form-container form .field-container:nth-of-type(2) {
+    grid-area: number;
+}
+
+.form-container form .field-container:nth-of-type(3) {
+    grid-area: expiration;
+}
+
+.form-container form .field-container:nth-of-type(4) {
+    grid-area: security;
+}
+
+.field-container input {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.field-container {
+    position: relative;
+}
+
+.form-container form {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: auto auto;
+    grid-template-rows: 90px 90px 90px;
+    grid-template-areas: "name name" "number number" "expiration security";
+    max-width: 400px;
+    padding: 20px;
+    color: white;
+}
+
+label {
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+
+input {
+    margin-top: 3px;
+    padding: 15px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #dcdcdc;
+}
+
+.container {
+    perspective: 1000px;
+}
+
+.btn-row {
+    width: 100%;
+    height: fit-content;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.btn-buy {
+    background: var(--red);
+    padding: 10px 20px;
+}
+.btn-row a {
+    width: 50%;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+}
+
+.close {
+    display: flex;
+    justify-content: end;
+}
+.close button {
+    background: var(--black);
+    color: white;
 }

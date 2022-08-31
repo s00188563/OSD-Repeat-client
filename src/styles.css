@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&family=Praise&display=swap");
+@import "~ngx-toastr/toastr.css";
 
 :root {
     --red: #d72323;
@@ -68,5 +69,20 @@ li {
     flex-direction: column;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.cdk-overlay-backdrop {
+    opacity: 0.6 !important;
+    background-color: black;
+}
+
+.toast-container .ngx-toastr {
+    box-shadow: none !important;
+}
