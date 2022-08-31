@@ -1,7 +1,10 @@
 footer {
     background-color: var(--darkblack);
-    min-height: 10rem;
+    min-height: 8rem;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 footer .footer-text {
     font-family: "Kanit", sans-serif;
@@ -10,22 +13,4 @@ footer .footer-text {
     letter-spacing: 1px;
     text-transform: uppercase;
     font-size: 2.5rem;
-}
-.github-wrapper {
-    display: flex;
-}
-.github {
-    opacity: 0.8;
-    padding: 2rem;
-}
-.github:hover {
-    opacity: 1;
-    cursor: pointer;
-}
-.subtitle {
-    font-family: "Kanit", sans-serif;
-    color: white;
-}
-a {
-    text-decoration: none;
 }

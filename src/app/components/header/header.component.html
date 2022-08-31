@@ -8,6 +8,7 @@
     <ul class="navbar">
         <li routerLink="/vehicles">vehicles</li>
         <li *ngIf="!user.isLoggedIn" routerLink="/login">Login</li>
+        <li *ngIf="user.isLoggedIn" routerLink="/payments">Payments</li>
         <div *ngIf="user.isLoggedIn" class="cart-icon" routerLink="/cart">
             <span>5</span>
             <fa-icon

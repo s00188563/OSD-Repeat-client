@@ -2,30 +2,11 @@
 <section class="vehicles">
     <h1 class="title">Vehicles</h1>
     <div class="filter_menu">
-        <div class="select" (change)="handleCategory($event)">
-            <span>Filters: </span>
-            <select name="category">
-                <option value="">All Products</option>
-                <option value="Super">Supercars</option>
-                <option value="motorcycle">Motorcycle</option>
-                <option value="SUV">SUV</option>
-            </select>
-        </div>
         <input
             type="text"
             placeholder="Search Cars"
             (change)="handleSearch($event)"
         />
-        <div class="select" (change)="handleSort($event)">
-            <span>Sort By: </span>
-            <select>
-                <option value="">Newest</option>
-                <option value="sort=-createdAt">Oldest</option>
-                <option value="sort=-sold">Best sales</option>
-                <option value="sort=-price">Price: High-Low</option>
-                <option value="sort=price">Price: Low-High</option>
-            </select>
-        </div>
     </div>
     <div class="load-more">
         <button (click)="doFilter(term)">Search</button>
