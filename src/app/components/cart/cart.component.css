@@ -57,7 +57,6 @@
     height: fit-content;
     margin-top: 1rem;
     display: flex;
-    background-color: var(--darkblack);
     justify-content: center;
 }
 .btn-buy {
@@ -70,4 +69,28 @@
     text-transform: uppercase;
     color: white;
     font-weight: 600;
+}
+
+.btn {
+    font-family: "Kanit", sans-serif;
+    color: white;
+    display: inline-block;
+    background-color: var(--red);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: var(--red);
+    margin-bottom: 5rem;
+}
+.btn:hover {
+    transform: translateY(-3px);
+}
+.btn:active {
+    outline: none;
+    transform: translateY(-5px);
 }
