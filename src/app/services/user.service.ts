@@ -34,6 +34,7 @@ export class UserService {
   private cartURL: string = '';
   private getCartURL: string = '';
   private updateCartURL: string = '';
+  private purchaseURL: string = '';
 
   public get userValue(): User | null {
     return this.userSubject.value;
@@ -103,10 +104,20 @@ export class UserService {
   }
 
   updateCart(cart: Vehicle[]) {
-    console.log('hi there');
     this.updateCartURL = `http://localhost:3000/api/${this.userSubject.value?._id}/updatecart`;
     this.http
       .put<any>(this.updateCartURL, { cart: cart })
+      .subscribe((response) => console.log(response));
+  }
+
+  purchase(cart: Vehicle[]) {
+    this.purchaseURL = `http://localhost:3000/api/payment`;
+    this.http
+      .post<any>(this.updateCartURL, {
+        _id: this.userSubject.value?._id,
+        email: this.userSubject.value?.email,
+        cart: cart,
+      })
       .subscribe((response) => console.log(response));
   }
 

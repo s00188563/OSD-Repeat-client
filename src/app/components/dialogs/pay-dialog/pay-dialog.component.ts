@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import {
   FormArray,
   FormControl,
@@ -6,8 +6,9 @@ import {
   NgForm,
   Validators,
 } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-pay-dialog',
@@ -25,8 +26,10 @@ export class PayDialogComponent implements OnInit {
   };
 
   constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
     public dialogRef: MatDialogRef<PayDialogComponent>,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private userService: UserService
   ) {}
 
   ngOnInit(): void {
@@ -45,6 +48,7 @@ export class PayDialogComponent implements OnInit {
   submit() {
     this.formGroup.markAllAsTouched();
     if (this.formGroup.valid) {
+      this.userService.purchase(this.data.cart);
     } else {
       this.toastrService.error('All Fields Required');
     }
