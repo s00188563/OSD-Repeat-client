@@ -30,6 +30,7 @@
     height: 300px;
     display: block;
     object-fit: cover;
+    object-position: center;
     border: 1px solid #282828;
 }
 .vehicle-details h3 {
