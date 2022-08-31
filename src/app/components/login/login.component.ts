@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -8,9 +9,11 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private toastrService: ToastrService
+  ) {}
   userForm!: UntypedFormGroup;
-  message: String = '';
   ngOnInit(): void {
     this.userForm = new UntypedFormGroup({
       email: new UntypedFormControl(''),
@@ -19,14 +22,8 @@ export class LoginComponent implements OnInit {
   }
   onSubmit() {
     this.userService.login(this.userForm?.value).subscribe({
-      next: (user) => {
-        console.log(JSON.stringify(user) + ' has been added');
-        this.message = 'new user has been added';
-      },
-      error: (err) => (this.message = err),
+      next: (user) => this.toastrService.success('Login Successful'),
+      error: (err) => this.toastrService.error(err.error.msg),
     });
-  }
-  dismissAlert() {
-    this.message = '';
   }
 }
