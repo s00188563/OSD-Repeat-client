@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -9,12 +9,12 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class RegisterComponent implements OnInit {
   constructor(private userService: UserService) {}
-  userForm!: FormGroup;
+  userForm!: UntypedFormGroup;
   message: String = '';
   ngOnInit(): void {
-    this.userForm = new FormGroup({
-      email: new FormControl(''),
-      password: new FormControl(''),
+    this.userForm = new UntypedFormGroup({
+      email: new UntypedFormControl(''),
+      password: new UntypedFormControl(''),
     });
   }
 
