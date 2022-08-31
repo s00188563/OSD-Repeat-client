@@ -114,6 +114,7 @@ export class UserService {
 
   purchase(cart: Vehicle[]) {
     console.log('welcome to purchase');
+    console.log(cart);
     this.purchaseURL =
       this.purchaseURL = `http://localhost:3000/api/${this.userSubject.value?._id}/payment`;
     this.http
