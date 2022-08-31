@@ -1,5 +1,5 @@
 <app-header></app-header>
-<section class="receipt">
+<section class="receipt" *ngIf="payments.length >= 1">
     <h1 class="title">Payments</h1>
     <div class="detail-container center">
         <div *ngFor="let payment of payments" class="payment-card">
@@ -20,6 +20,11 @@
                 </div>
             </div>
         </div>
+    </div>
+</section>
+<section class="receipt" *ngIf="payments.length === 0">
+    <div class="no-data">
+        <h2>You Have No Itmes In Your Cart</h2>
     </div>
 </section>
 <app-footer></app-footer>

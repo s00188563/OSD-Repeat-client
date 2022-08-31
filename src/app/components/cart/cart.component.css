@@ -49,9 +49,9 @@
 .box-detail p {
     color: white;
     width: 60%;
-    line-height: 1.5;
     margin: 10px 0;
     opacity: 0.8;
+    font-size: 1.25rem;
 }
 .btn-row {
     width: 100%;
@@ -94,4 +94,11 @@
 .btn:active {
     outline: none;
     transform: translateY(-5px);
+}
+
+.no-data {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

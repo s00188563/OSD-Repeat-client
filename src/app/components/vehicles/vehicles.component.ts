@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Vehicle } from 'src/app/interfaces/vehicle';
 import { UserService } from 'src/app/services/user.service';
 import { VehiclesService } from 'src/app/services/vehicles.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-vehicles',
@@ -15,7 +16,8 @@ export class VehiclesComponent implements OnInit {
   constructor(
     private vehicleService: VehiclesService,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private toastrService: ToastrService
   ) {}
   vehicleList: Vehicle[] = [];
   currentVehicle!: Vehicle;
@@ -63,5 +65,6 @@ export class VehiclesComponent implements OnInit {
     }
     this.currentVehicle = vehicle;
     this.userService.addToCart(this.currentVehicle);
+    this.toastrService.success('Added to Cart');
   }
 }

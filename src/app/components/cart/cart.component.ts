@@ -3,6 +3,7 @@ import { Vehicle } from 'src/app/interfaces/vehicle';
 import { UserService } from 'src/app/services/user.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PayDialogComponent } from '../dialogs/pay-dialog/pay-dialog.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cart',
@@ -10,7 +11,11 @@ import { PayDialogComponent } from '../dialogs/pay-dialog/pay-dialog.component';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  constructor(private userService: UserService, public dialog: MatDialog) {}
+  constructor(
+    private userService: UserService,
+    public dialog: MatDialog,
+    private toastrService: ToastrService
+  ) {}
   cart: Vehicle[] = [];
   error: string = '';
   currentItem!: Vehicle;
@@ -30,6 +35,7 @@ export class CartComponent implements OnInit {
         this.updateCart(this.cart);
       }
     });
+    this.toastrService.success('Successfully Removed');
   }
   updateCart(cart: Vehicle[]) {
     this.userService.updateCart(cart);

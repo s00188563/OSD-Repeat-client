@@ -1,5 +1,5 @@
 <app-header></app-header>
-<section class="detail">
+<section class="detail" *ngIf="cart.length >= 1">
     <h1 class="title">Cart</h1>
     <div class="detail-container center">
         <div *ngFor="let cart of cart" class="vehicle-card">
@@ -24,6 +24,11 @@
             </div>
         </div>
         <button class="btn" (click)="openPayDialog()">Buy Now</button>
+    </div>
+</section>
+<section class="detail" *ngIf="cart.length === 0">
+    <div class="no-data">
+        <h2>You Have No Itmes In Your Cart</h2>
     </div>
 </section>
 <app-footer></app-footer>
