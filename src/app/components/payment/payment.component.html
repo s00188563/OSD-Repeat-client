@@ -1,3 +1,25 @@
 <app-header></app-header>
-<section class="receipt"></section>
+<section class="receipt">
+    <h1 class="title">Payments</h1>
+    <div class="detail-container center">
+        <div *ngFor="let payment of payments" class="payment-card">
+            <div>
+                <h2>Title</h2>
+                <div *ngFor="let item of payment.cart" class="items">
+                    <div>
+                        <p>{{ item.title }}</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>Price</h2>
+                <div *ngFor="let item of payment.cart" class="items">
+                    <div>
+                        <p>$ {{ item.price }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <app-footer></app-footer>

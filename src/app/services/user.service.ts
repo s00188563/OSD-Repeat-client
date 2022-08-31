@@ -8,6 +8,7 @@ import {
 import { Router } from '@angular/router';
 import { User } from '../interfaces/user';
 import { Vehicle } from '../interfaces/vehicle';
+import { Payment } from '../interfaces/payments';
 
 @Injectable({
   providedIn: 'root',
@@ -35,6 +36,7 @@ export class UserService {
   private getCartURL: string = '';
   private updateCartURL: string = '';
   private purchaseURL: string = '';
+  private getPaymentURL: string = '';
 
   public get userValue(): User | null {
     return this.userSubject.value;
@@ -112,13 +114,21 @@ export class UserService {
 
   purchase(cart: Vehicle[]) {
     console.log('welcome to purchase');
-    this.purchaseURL = `http://localhost:3000/api/${this.userSubject.value?._id}/payment`;
+    this.purchaseURL =
+      this.purchaseURL = `http://localhost:3000/api/${this.userSubject.value?._id}/payment`;
     this.http
       .post<any>(this.purchaseURL, {
         cart: cart,
       })
       .subscribe((response) => console.log(response));
     this.router.navigate(['/payments']);
+  }
+
+  getPayments(): Observable<Payment[]> {
+    this.getPaymentURL = `http://localhost:3000/api/${this.userSubject.value?._id}/payment`;
+    return this.http
+      .get<Payment[]>(this.getPaymentURL)
+      .pipe(catchError(this.handleError));
   }
 
   private handleError(error: HttpErrorResponse) {
