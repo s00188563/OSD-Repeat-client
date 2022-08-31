@@ -19,6 +19,7 @@ import { PayDialogComponent } from './components/dialogs/pay-dialog/pay-dialog.c
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { ToastrModule } from 'ngx-toastr';
+import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ToastrModule } from 'ngx-toastr';
     HomeComponent,
     CartComponent,
     PayDialogComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,

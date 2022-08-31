@@ -34,9 +34,6 @@ export class CartComponent implements OnInit {
   updateCart(cart: Vehicle[]) {
     this.userService.updateCart(cart);
   }
-  purchase(cart: Vehicle[]) {
-    this.userService.purchase(cart);
-  }
 
   openPayDialog() {
     const dialogRef = this.dialog.open(PayDialogComponent, {

@@ -1,0 +1,5 @@
+.receipt {
+    background-color: var(--black);
+    width: 100%;
+    min-height: 80vh;
+}

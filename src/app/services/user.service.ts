@@ -111,14 +111,14 @@ export class UserService {
   }
 
   purchase(cart: Vehicle[]) {
-    this.purchaseURL = `http://localhost:3000/api/payment`;
+    console.log('welcome to purchase');
+    this.purchaseURL = `http://localhost:3000/api/${this.userSubject.value?._id}/payment`;
     this.http
-      .post<any>(this.updateCartURL, {
-        _id: this.userSubject.value?._id,
-        email: this.userSubject.value?.email,
+      .post<any>(this.purchaseURL, {
         cart: cart,
       })
       .subscribe((response) => console.log(response));
+    this.router.navigate(['/payments']);
   }
 
   private handleError(error: HttpErrorResponse) {

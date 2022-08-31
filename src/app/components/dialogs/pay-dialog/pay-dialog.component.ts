@@ -49,6 +49,9 @@ export class PayDialogComponent implements OnInit {
     this.formGroup.markAllAsTouched();
     if (this.formGroup.valid) {
       this.userService.purchase(this.data.cart);
+      this.dialogRef.close();
+      this.userService.updateCart([]);
+      this.toastrService.success('Purchase Successful');
     } else {
       this.toastrService.error('All Fields Required');
     }
