@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
+import { MatDialogModule } from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -15,6 +15,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { CartComponent } from './components/cart/cart.component';
+import { PayDialogComponent } from './components/dialogs/pay-dialog/pay-dialog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { CartComponent } from './components/cart/cart.component';
     RegisterComponent,
     HomeComponent,
     CartComponent,
+    PayDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,8 @@ import { CartComponent } from './components/cart/cart.component';
     ReactiveFormsModule,
     FormsModule,
     FontAwesomeModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Vehicle } from 'src/app/interfaces/vehicle';
 import { UserService } from 'src/app/services/user.service';
+import { MatDialog } from '@angular/material/dialog';
+import { PayDialogComponent } from '../dialogs/pay-dialog/pay-dialog.component';
 
 @Component({
   selector: 'app-cart',
@@ -8,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, public dialog: MatDialog) {}
   cart: Vehicle[] = [];
   error: string = '';
   currentItem!: Vehicle;
@@ -31,5 +33,11 @@ export class CartComponent implements OnInit {
   }
   updateCart(cart: Vehicle[]) {
     this.userService.updateCart(cart);
+  }
+  openPayDialog() {
+    const dialogRef = this.dialog.open(PayDialogComponent);
+    dialogRef.afterClosed().subscribe(() => {
+      console.log('dialog has been closed');
+    });
   }
 }
